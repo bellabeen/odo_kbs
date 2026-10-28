@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_kbs_storage_backend_admin,Storage Backend Admin,model_kbs_storage_backend,base.group_system,1,1,1,1
+access_kbs_storage_backend_user,Storage Backend User,model_kbs_storage_backend,base.group_user,1,0,0,0
+access_kbs_storage_object_user,Storage Object User,model_kbs_storage_object,base.group_user,1,0,0,0
+access_kbs_storage_object_admin,Storage Object Admin,model_kbs_storage_object,base.group_system,1,1,1,1

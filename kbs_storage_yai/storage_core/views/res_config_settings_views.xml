@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Settings → Storage block. Extends core base_setup view via inheritance (ADR-008). -->
+<odoo>
+    <record id="res_config_settings_view_form_kbs_storage" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.kbs.storage</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Storage" name="kbs_storage_app">
+                    <block title="Storage">
+                        <setting
+                            string="Default Storage Backend"
+                            help="Backend used when no per-record backend is set.">
+                            <field name="kbs_default_storage_backend_id"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

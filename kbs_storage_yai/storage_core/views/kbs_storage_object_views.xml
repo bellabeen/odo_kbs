@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_kbs_storage_object_form" model="ir.ui.view">
+        <field name="name">kbs.storage.object.form</field>
+        <field name="model">kbs.storage.object</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="backend_id"/>
+                            <field name="bucket"/>
+                            <field name="object_key"/>
+                            <field name="mime"/>
+                        </group>
+                        <group>
+                            <field name="size"/>
+                            <field name="checksum"/>
+                            <field name="etag"/>
+                            <field name="storage_class"/>
+                            <field name="version_id"/>
+                        </group>
+                    </group>
+                    <group string="Encryption">
+                        <field name="encryption"/>
+                        <field name="kms_key_id"/>
+                        <field name="region"/>
+                        <field name="ref_count"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_kbs_storage_object_tree" model="ir.ui.view">
+        <field name="name">kbs.storage.object.tree</field>
+        <field name="model">kbs.storage.object</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="backend_id"/>
+                <field name="bucket"/>
+                <field name="object_key"/>
+                <field name="size"/>
+                <field name="mime"/>
+                <field name="ref_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_kbs_storage_object" model="ir.actions.act_window">
+        <field name="name">Stored Objects</field>
+        <field name="res_model">kbs.storage.object</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_kbs_storage_object"
+        name="Objects"
+        parent="menu_kbs_storage_root"
+        action="action_kbs_storage_object"
+        groups="base.group_system"/>
+</odoo>

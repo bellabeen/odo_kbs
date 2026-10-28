@@ -1,0 +1,7 @@
+{
+  "diagnosticSeverityOverrides": {
+    "reportMissingImports": "none",
+    "reportMissingModuleSource": "none"
+  },
+  "typeCheckingMode": "off"
+}
